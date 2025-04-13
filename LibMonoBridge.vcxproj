@@ -84,20 +84,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Static|Win32'">
-    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)-$(Configuration)\inter\</IntDir>
+    <OutDir>$(SolutionDir)build\$(SolutionName)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\inter\$(SolutionName)\$(ProjectName)-$(Platform)-$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)-$(Configuration)\inter\</IntDir>
+    <OutDir>$(SolutionDir)build\$(SolutionName)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\inter\$(SolutionName)\$(ProjectName)-$(Platform)-$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Static|Win32'">
-    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)-$(Configuration)\inter\</IntDir>
+    <OutDir>$(SolutionDir)build\$(SolutionName)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\inter\$(SolutionName)\$(ProjectName)-$(Platform)-$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)-$(Configuration)\inter\</IntDir>
+    <OutDir>$(SolutionDir)build\$(SolutionName)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\inter\$(SolutionName)\$(ProjectName)-$(Platform)-$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Static|Win32'">
     <ClCompile>
@@ -120,6 +120,9 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\External\$(Platform)\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>libmonobridge.def</ModuleDefinitionFile>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -139,7 +142,7 @@
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalLibraryDirectories>$(SolutionDir)\External\$(Platform)\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>libmonobridge.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
@@ -167,7 +170,7 @@
       <ModuleDefinitionFile>libmonobridge.def</ModuleDefinitionFile>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)\External\$(Platform)\lib\$(Configuration);$(SolutionDir)\build\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -192,6 +195,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>libmonobridge.def</ModuleDefinitionFile>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)\External\$(Platform)\lib\$(Configuration);$(SolutionDir)\build\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
