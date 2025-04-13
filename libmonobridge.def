@@ -1,0 +1,7 @@
+LIBRARY LibMonoBridge.dll
+EXPORTS
+ScePsmEdataMonoInit
+pss_crypto_open
+pss_crypto_read
+pss_crypto_fread
+pss_crypto_close
