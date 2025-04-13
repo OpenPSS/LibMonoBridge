@@ -2,7 +2,6 @@
 #include <PssCryptoSeek.h>
 #include <PssCryptoContext.h>
 #include <PssCrypto.h>
-#include <mono/mono.h>
 
 #include <string>
 #include <iostream>
