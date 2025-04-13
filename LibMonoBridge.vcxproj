@@ -141,7 +141,7 @@
       <SubSystem>
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)..\bin\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>libmonobridge.def</ModuleDefinitionFile>
     </Link>
@@ -196,6 +196,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>libmonobridge.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)..\bin\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)\External\$(Platform)\lib\$(Configuration);$(SolutionDir)\build\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
