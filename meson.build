@@ -7,7 +7,6 @@ cpp = meson.get_compiler('cpp')
 dirbase = meson.current_source_dir()
 
 libMonoBridge = static_library('MonoBridge',
-	'PssCrypto.cpp'
-	install  true)
-	
-libMonoBridge_dep = declare_dependency(link_with libMonoBridge)
+	'PssCrypto.cpp',
+	'LibMonoBridge.cpp',
+	install: true)
