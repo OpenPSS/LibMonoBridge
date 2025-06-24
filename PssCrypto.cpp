@@ -9,7 +9,7 @@
 
 const int PSM_ERROR_NO_ERROR = 0;
 #ifdef _DEBUG
-#define DebugLog(x) std::cout << x << std::endl;
+#define DebugLog(x) std::cerr << x << std::endl;
 #else
 #define DebugLog(x) /**/
 #endif
